@@ -1,0 +1,10 @@
+# windows users
+
+name: batch_environment
+dependencies:
+- python=3.8
+- numpy
+- pandas
+- scikit-learn
+- pip:
+  - azureml-core

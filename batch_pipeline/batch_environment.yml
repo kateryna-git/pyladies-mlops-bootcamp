@@ -7,4 +7,6 @@ dependencies:
 - pandas
 - scikit-learn
 - pip:
-  - azureml-core
+  - azureml-core
+  - azureml-pipeline-core
+  - azureml-pipeline-steps

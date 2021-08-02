@@ -1,0 +1,19 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "name": "inputBlob",
+      "type": "blobTrigger",
+      "direction": "in",
+      "path": "capstone-predictions-input/{name}",
+      "connection": "StorageConnecitonString"
+    },
+    {
+      "name": "predictions",
+      "type": "blob",
+      "direction": "out",
+      "path": "capstone-predictions-output/{name}",
+      "connection": "StorageConnecitonString"
+    }
+  ]
+}

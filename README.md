@@ -25,12 +25,12 @@ Project Organization
     ├── evaluate_model_15_min.ipynb     <- Evaluate and train 15 min model.   #2
     │
     │
-    ├── generate_batch_daily_data.ipynb    <- Daily model.    #1
-    ├── generate_15_min_data.ipynb         <- 15 min model.   #2
+    ├── generate_batch_daily_data.ipynb  <- Daily model.    #1
+    ├── generate_15_min_data.ipynb       <- 15 min model.   #2
     │
-    ├── create_batch_pipeline.ipynb        <- Batch pipeline - Daily model.            #1
-    ├── blob_function (folder)             <- Blob Trigger functions - 15 min model.   #2    
+    ├── create_batch_pipeline.ipynb      <- Batch pipeline - Daily model.            #1
+    ├── blob_function (folder)           <- Blob Trigger functions - 15 min model.   #2    
     │
-    └── capstone.md                     <- Capstone project tasks.
+    └── capstone.md                      <- Capstone project tasks.
 
 --------

@@ -2,10 +2,9 @@ import logging
 import joblib
 import pandas as pd
 import numpy as np
-import os
 import io
 import azure.functions as func
-from azureml.core import Model, Workspace
+from azureml.core import Model
 
 
 def main(inputBlob: func.InputStream, predictions: func.Out[str]):
@@ -14,9 +13,9 @@ def main(inputBlob: func.InputStream, predictions: func.Out[str]):
                  f"Blob Size: {inputBlob.length} bytes")
 
 
-    ws = Workspace.from_config()
+    # ws = Workspace.from_config()
     # model_list = Model.list(ws)
-    model_path = Model.get_model_path('liner_regression', _workspace=ws)
+    model_path = Model.get_model_path('liner_regression')
     model = joblib.load(model_path)
     logging.info(f"model loaded")
 
@@ -29,6 +28,7 @@ def main(inputBlob: func.InputStream, predictions: func.Out[str]):
     prediction = model.predict(data.to_numpy().reshape(1, -1)) 
     # # [ 66.42063515,  92.83081999, 119.16201124, 145.4932025 ]
     logging.info(f"{prediction}")
+    output =''
     if (prediction[0] < 92.83081999):
         output = 'low'
     elif (92.83081999 <= prediction[0] <= 119.16201124):

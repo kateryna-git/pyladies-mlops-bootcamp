@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 import io
 import azure.functions as func
-from azureml.core import Model
+from azureml.core import Model, Workspace
 
 
 def main(inputBlob: func.InputStream, predictions: func.Out[str]):
@@ -15,7 +15,7 @@ def main(inputBlob: func.InputStream, predictions: func.Out[str]):
 
     # ws = Workspace.from_config()
     # model_list = Model.list(ws)
-    model_path = Model.get_model_path('liner_regression')
+    model_path = Model.get_model_path('capstone_15_min_model')
     model = joblib.load(model_path)
     logging.info(f"model loaded")
 
@@ -36,6 +36,6 @@ def main(inputBlob: func.InputStream, predictions: func.Out[str]):
     else:
         output = 'high'  
 
-    logging.info(f"OUTPUT: {output}")    
+    logging.info(f"OUTPUT: {output, prediction[0]}")    
 
-    predictions.set(output)             
+    predictions.set(f'{output}, {prediction[0]}')             

@@ -12,7 +12,7 @@
       "name": "predictions",
       "type": "blob",
       "direction": "out",
-      "path": "capstone-predictions-output/{name}",
+      "path": "capstone-predictions-output/pred.csv",
       "connection": "StorageConnecitonString"
     }
   ]

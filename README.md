@@ -3,7 +3,7 @@
 Project Organization
 ------------
 
-    ├── README.md          <- The top-level README for developers using this project.
+    ├── README.md                       <- The top-level README.
     ├── data
     │   ├── baseline_predictions.csv    <- Baseline predictions from hourly model.
     │   ├── capstome_15_min_data.csv    <- Processed data to be used for 15 min model training and testing.
